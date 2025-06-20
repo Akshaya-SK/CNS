@@ -28,7 +28,50 @@ becomes C. To change a message back, each letter is replaced by the one three be
 
 
 PROGRAM :-
+/*
+#include <stdio.h>
+#include <ctype.h>
 
+void encrypt(char text[], int key) {
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (isalpha(text[i])) {
+            char base = isupper(text[i]) ? 'A' : 'a';
+            text[i] = (text[i] - base + key) % 26 + base;
+        }
+    }
+}
+
+void decrypt(char text[], int key) {
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (isalpha(text[i])) {
+            char base = isupper(text[i]) ? 'A' : 'a';
+            text[i] = (text[i] - base - key + 26) % 26 + base;
+        }
+    }
+}
+
+int main() {
+    char text[100];
+    int key, choice;
+
+    printf("Enter the text: ");
+    scanf("%s", text);
+    printf("Enter the key (e.g. 3): ");
+    scanf("%d", &key);
+    printf("1. Encrypt\n2. Decrypt\nEnter choice: ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        encrypt(text, key);
+        printf("Encrypted Text: %s\n", text);
+    } else {
+        decrypt(text, key);
+        printf("Decrypted Text: %s\n", text);
+    }
+
+    return 0;
+}
+*/
 
 
 OUTPUT :-
